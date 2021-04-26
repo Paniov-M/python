@@ -1,0 +1,94 @@
+1)
+
+
+cities = ['Budapest', 'Rome', 'Istanbul', 'Sydney', 'Kyiv', 'Hong Kong']
+
+for i in range(0 ,len(cities)-2):
+        print(cities[i], end = ', ')
+print(cities[len(cities)-2], 'and', cities[len(cities)-1])
+
+
+
+
+
+
+
+2)
+
+
+
+
+languaches = ["ukrainian","french","bulgarian","norwegian","latvian"]
+print(languaches)
+
+languaches.sort()
+print("\n Sort")
+print(languaches)
+
+print("\nReverse")
+languaches.reverse()
+print(languaches)
+
+print("\nSorted")
+sorted_languaches = sorted (languaches)
+print(sorted_languaches)
+
+
+3)
+
+
+
+
+
+
+e2g={"stork":"storch","hawk":"falke","woodpecker":"specht","owl":"eule"}
+
+key = "owl"
+
+word = e2g.get(key)
+
+print("Owl = ", word)
+
+e2g["mother"] = "mutter" 
+
+e2g["paradise"] = "paradies"
+
+print("\n")
+print(e2g)
+print("\n")
+print("Keys = ", list(e2g.keys()))
+print("\n")
+print("Values = ", list(e2g.values()))
+
+
+
+
+4)
+
+
+cities = {"Paris":{"coutry":"France","population":"2m","fact":"Eiffel Tower"},
+          "Barselona":{"coutry":"Spain","population":"4m","fact":"the same name have the best football club ever"},
+          "New York":{"coutry":"USA","population":"8m","fact":"Stature of Liberty"}}
+
+for key in cities:
+    print(key, " - ", cities[key])
+
+
+
+5)
+
+
+s=input()
+
+
+if (ord(s[0]) * ord(s[1]) %2) == 0:
+    print("White")
+else:
+    print("Black")  
+
+
+
+
+
+
+

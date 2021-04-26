@@ -1,0 +1,53 @@
+1)
+
+import re
+text = input("Write a string: ")
+if len(text) < 3:
+    print("Error: < 3")
+else:
+
+    max = 0
+    slovo = " "
+    previous = []
+
+    for i in range(0, 3):
+
+        for i in range(0 ,len(text)):
+                if text[i] in previous:
+                    continue
+                if text[i] == " ":                  # Ігнорування пробілів
+                    continue                        #
+                find = re.findall(text[i], text)    # Основний підрахунок к-ті символів
+                if len(find) > max:                 # використовуючи метод регулярного
+                    max = len(find)                 # виразу
+                    slovo = text[i]                 #
+        print(max, slovo)
+        max = 0
+        previous.append(slovo)
+        slovo = " "
+
+
+
+
+
+
+
+
+
+
+2)
+
+
+
+import re
+a=input("Enter email: ")
+pattern=r"^[a-zA-Z0-9]{1,100}[@][a-z]{2,6}\.[a-z]{2,4}"
+number_re=re.compile(pattern)
+if number_re.findall(a):
+    print("Email is correct:")
+    print(a)
+else:
+    print("Error:")
+    print(a)
+
+

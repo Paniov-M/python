@@ -1,0 +1,154 @@
+
+
+2)
+
+
+
+
+
+
+
+
+import pickle
+
+dictionary = {}
+
+a = input("History = ")
+
+b = input("Geography = ")
+
+c = input("Chemistry = ")
+
+dictionary["history"] = a 
+
+dictionary["geography"] = b
+
+dictionary ["chemistry"] = c
+
+#Запис даних у файл
+frecord = open('text2.txt', 'wt')
+print(dictionary, file=frecord)
+frecord.close()
+# Зчитування даних з text2.txt
+freading = open('text2.txt', 'rt' )
+lines = freading.read()
+freading.close()
+print("\n")
+# Видалення переходу та форматування
+lines = lines.rstrip().replace('{','')
+lines = lines.replace('}','')
+lines = lines.replace(',', '\n')
+lines = lines.replace("'", ' ')
+lines = lines.replace(":", '-')
+lines = lines.replace(" ", '')
+print(lines)
+
+
+
+1)
+
+
+
+
+import pickle
+
+count = int(input("How many people ? "))
+dictionary = {}
+for i in range(count):
+    information = {}    
+    age = int(input("Input age of person :")) 
+    information["soname"] = input("Input soname of person :")
+    information["birth"] = input("Input birth of person :")
+    information["city"] = input("Input city of person :")
+    dictionary[age] = information
+    print("\n")
+
+dk= dictionary.keys()
+
+list_dk = list(dk)
+
+list_dk.sort()
+
+sort_dik = {}
+
+for k in list_dk:
+    sort_dik[k] = dictionary[k]
+
+
+#Запис даних у файл
+frecord = open('text2.txt', 'wt')
+print(sort_dik, file=frecord)
+frecord.close()
+# Зчитування даних з text2.txt
+freading = open('text2.txt', 'rt' )
+lines = freading.read()
+freading.close()
+lines = lines.rstrip().replace('{','')
+lines = lines.replace('}','\n')
+lines = lines.replace(',', ' ')
+lines = lines.replace("'", ' ')
+lines = lines.replace(":", '-')
+print(lines)
+
+
+3)
+
+
+
+list1 = []                              # Список для початкового запису з файлу
+
+freading = open('text3.txt', 'rt' )     # Зчитування з файлу text3.txt
+lines = freading.readlines()
+freading.close()
+
+
+print(len(lines), 'lines read')
+
+
+for line in lines:
+    list1.append(line.rstrip())         # Забираю переноси в наступний рядок
+
+
+for i in range(0, len(list1)):
+    list1[i] = list1[i].split(' ')      # Видалення пробілів
+
+
+slovnuk = {}
+sum = 0
+for i in range(0, len(list1)):          # Знаходження суми і запис в словник
+    for j in range(0, len(list1[i])):   
+        sum = sum + int(list1[i][j])
+    slovnuk[i+1] = sum
+    sum = 0
+print(slovnuk)
+
+
+4)
+
+
+list1 = []
+n = int(input("Рядок для видалення = "))
+
+freading = open('text3.txt', 'rt' )
+lines = freading.readlines()
+freading.close()
+
+if n > len(lines) or n < 1:
+    print("Рядків взагалі", len(lines))
+else:
+
+    print(len(lines), 'lines read')
+    print(lines)
+
+    for i in lines:
+        list1.append(i.rstrip())
+
+
+    del list1[n-1]
+    print(list1)
+
+
+    frecord = open('text3.txt', 'wt')
+    for i in range(0, len(list1)):
+        print(list1[i], file=frecord)
+    frecord.close()
